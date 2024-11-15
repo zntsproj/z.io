@@ -6,35 +6,43 @@
     <title>ZenithOS</title>
     <style>
         body {
-            background-color: #001233;
-            color: #ffffff;
+            background-color: #000; /* Темный фон */
+            color: #eee; /* Светлый текст */
             font-family: "Roboto", sans-serif;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Занимает всю высоту экрана */
+        }
+        .moon {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #fff 20%, transparent 20%);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Свечение луны */
         }
 
         .container {
             max-width: 960px;
-            margin: 0 auto;
+            margin: 50px auto; /* Отступы сверху и снизу */
             padding: 20px;
+            flex: 1; /* Занимает доступное пространство */
+            background-color: rgba(0, 18, 51, 0.8); /* Полупрозрачный фон контейнера */
+            border-radius: 20px; /* Закругленные углы контейнера */
+            backdrop-filter: blur(10px); /* Эффект размытия фона */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         h1 {
             font-size: 2em;
             text-align: center;
             margin-bottom: 20px;
-            color: #007bff;
-            animation: fadeInUp 1s ease-in-out;
-        }
+            color: #00bfff; /* Голубой заголовок */
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Свечение заголовка */
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .features {
@@ -44,17 +52,20 @@
         }
 
         .feature {
-            background-color: #002664;
+
             padding: 20px;
             border-radius: 10px;
             text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+
         }
 
         .feature h2 {
             font-size: 1.5em;
-            color: #00bfff;
+            color: #00bfff; /* Голубой подзаголовок */
             margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Свечение заголовка */
+
         }
 
         .telegram-link {
@@ -66,27 +77,30 @@
             border-radius: 5px;
             text-decoration: none;
             text-align: center;
+            transition: background-color 0.3s ease;
         }
+        .telegram-link:hover {
+           background-color: #0056b3;
+        }
+
         .installation-info {
-            background-color: #002664;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+         a {
+            color: #00bfff;
+             text-decoration: none;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5em;
-            }
-        }
     </style>
 </head>
 <body>
+   <div class="moon"></div>
     <div class="container">
         <h1>ZenithOS - The Next Generation Mobile Operating System</h1>
 
-        <div class="features">
+          <div class="features">
             <div class="feature">
                 <h2>5G</h2>
                 <p>Supports 5th generation networks for lightning-fast internet speeds and content loading.</p>
@@ -113,3 +127,4 @@
     </div>
 </body>
 </html>
+
