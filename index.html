@@ -6,15 +6,16 @@
     <title>ZenithOS</title>
     <style>
         body {
-            background-color: #000;
+            background-color: #030340;
             color: #eee;
             font-family: "Roboto", sans-serif;
             margin: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='100' viewBox='0 0 20 100'><path d='M0 0v100h20V0zm5 5h10v10H5zm5 20h10v10H10zm5 20h10v10H15zm-10 20h10v10H5z' fill='%23030340' /></svg>");
+            overflow: hidden;
         }
+
         .moon {
             position: absolute;
             top: 50px;
@@ -24,6 +25,7 @@
             background-color: #000080;
             border-radius: 50%;
             box-shadow: 0 0 20px rgba(0, 0, 139, 0.5);
+            z-index: -1;
         }
 
         .container {
@@ -35,6 +37,36 @@
             border-radius: 20px;
             backdrop-filter: blur(10px);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+           position: absolute;
+           width: 4px;
+           height: 4px;
+           background-color: white;
+           border-radius: 50%;
+           box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+           opacity: 0.5;
+        }
+
+        .star-1{
+            top: 20px;
+            left: 20px;
+        }
+        .star-2{
+            bottom: 20px;
+            right: 20px;
         }
 
         h1 {
@@ -42,8 +74,6 @@
             text-align: center;
             margin-bottom: 20px;
             color: #00bfff;
-            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
-
         }
 
         .features {
@@ -57,13 +87,14 @@
             border-radius: 10px;
             text-align: center;
             color: #ffffff;
+             position: relative; /* Добавлено для звезд */
+             overflow: hidden;
         }
 
         .feature h2 {
             font-size: 1.5em;
             color: #00bfff;
             margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
         }
 
         .telegram-link {
@@ -85,6 +116,8 @@
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
+             position: relative; /* Добавлено для звезд */
+             overflow: hidden;
         }
          a {
             color: #00bfff;
@@ -96,31 +129,57 @@
 <body>
    <div class="moon"></div>
     <div class="container">
+         <div class="stars">
+             <div class="star star-1"></div>
+             <div class="star star-2"></div>
+         </div>
         <h1>ZenithOS - The Next Generation Mobile Operating System</h1>
         <div class="features">
             <div class="feature">
+                 <div class="stars">
+                     <div class="star star-1"></div>
+                     <div class="star star-2"></div>
+                 </div>
                 <h2>5G</h2>
                 <p>Supports 5th generation networks for lightning-fast internet speeds and content loading.</p>
             </div>
             <div class="feature">
+                 <div class="stars">
+                     <div class="star star-1"></div>
+                     <div class="star star-2"></div>
+                 </div>
                 <h2>Linux</h2>
                 <p>ZenithOS is built upon the Linux kernel, providing unparalleled stability, security, and flexibility.</p>
             </div>
             <div class="feature">
+                 <div class="stars">
+                     <div class="star star-1"></div>
+                     <div class="star star-2"></div>
+                 </div>
                 <h2>.zapp</h2>
                 <p>Use applications in the unique .zapp format, designed specifically for ZenithOS, for maximum performance and security.</p>
             </div>
             <div class="feature">
+                 <div class="stars">
+                     <div class="star star-1"></div>
+                     <div class="star star-2"></div>
+                 </div>
                 <h2>Performance</h2>
                 <p>ZenithOS is optimized for maximum performance on mobile devices, ensuring a smooth and responsive experience.</p>
             </div>
         </div>
         <div class="installation-info">
+             <div class="stars">
+                 <div class="star star-1"></div>
+                 <div class="star star-2"></div>
+             </div>
             <h2>Installation Instructions</h2>
             <p>Firmware for ZenithOS can be found on our reserve Telegram channel: <a href="https://t.me/zenithos_os">@zenithos_os</a>. Please be aware that the firmware is currently under development and may not be fully stable.</p>
         </div>
 
-        <a class="telegram-link" href="https://t.me/ZenithOS">Official Telegram Channel</a>
+<a class="telegram-link" href="https://t.me/ZenithOS">Official Telegram Channel</a>
     </div>
 </body>
 </html>
+
+
