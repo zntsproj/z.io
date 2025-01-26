@@ -1,185 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZenithOS: Легковесная ОС для старых устройств и с малым объемом ОЗУ.">
     <title>ZenithOS</title>
     <style>
         body {
-            background-color: #030340;
-            color: #eee;
-            font-family: "Roboto", sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow: hidden;
+            padding: 0;
+            background-color: #121212;
+            color: #f1f1f1;
+            text-align: center;
         }
-
-        .moon {
-            position: absolute;
-            top: 50px;
-            right: 50px;
-            width: 100px;
-            height: 100px;
-            background-color: #000080;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0, 0, 139, 0.5);
-            z-index: -1;
-        }
-
         .container {
-            max-width: 960px;
-            margin: 50px auto;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            flex: 1;
-            background-color: rgba(0, 18, 51, 0.8);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
         }
-
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .star {
-           position: absolute;
-           width: 4px;
-           height: 4px;
-           background-color: white;
-           border-radius: 50%;
-           box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-           opacity: 0.5;
-        }
-
-        .star-1{
-            top: 20px;
-            left: 20px;
-        }
-        .star-2{
-            bottom: 20px;
-            right: 20px;
-        }
-
         h1 {
-            font-size: 2em;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #00bfff;
+            font-size: 48px;
+            margin-top: 100px;
         }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .feature {
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            color: #ffffff;
-             position: relative; /* Добавлено для звезд */
-             overflow: hidden;
-        }
-
-        .feature h2 {
-            font-size: 1.5em;
-            color: #00bfff;
-            margin-bottom: 10px;
-        }
-
-        .telegram-link {
-            display: block;
-            margin: 20px auto;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-        .telegram-link:hover {
-           background-color: #0056b3;
-        }
-
-        .installation-info {
-            padding: 20px;
-            border-radius: 10px;
+        .description {
+            font-size: 24px;
             margin-top: 20px;
-             position: relative; /* Добавлено для звезд */
-             overflow: hidden;
         }
-         a {
-            color: #00bfff;
-             text-decoration: none;
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s;
         }
-
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .widget-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .widget {
+            background-color: #333;
+            padding: 40px;
+            border-radius: 10px;
+            flex: 1;
+            max-width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .widget h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .widget p {
+            font-size: 16px;
+        }
+        .dark-theme {
+            background-color: #121212;
+        }
+        .light-theme {
+            background-color: #f1f1f1;
+            color: #121212;
+        }
     </style>
 </head>
 <body>
-   <div class="moon"></div>
     <div class="container">
-         <div class="stars">
-             <div class="star star-1"></div>
-             <div class="star star-2"></div>
-         </div>
-        <h1>ZenithOS - The Next Generation Mobile Operating System</h1>
-        <div class="features">
-            <div class="feature">
-                 <div class="stars">
-                     <div class="star star-1"></div>
-                     <div class="star star-2"></div>
-                 </div>
-                <h2>5G</h2>
-                <p>Supports 5th generation networks for lightning-fast internet speeds and content loading.</p>
+        <h1 id="title">Добро пожаловать в ZenithOS</h1>
+        <p id="description" class="description">Наша цель — создать легковесную операционную систему, которая будет работать на старых устройствах с малым объемом ОЗУ.</p>
+        
+        <div class="widget-container">
+            <div class="widget">
+                <h3>Легковесность и скорость</h3>
+                <p>ZenithOS разработан для работы даже на старом оборудовании с минимальным использованием памяти.</p>
             </div>
-            <div class="feature">
-                 <div class="stars">
-                     <div class="star star-1"></div>
-                     <div class="star star-2"></div>
-                 </div>
-                <h2>Linux</h2>
-                <p>ZenithOS is built upon the Linux kernel, providing unparalleled stability, security, and flexibility.</p>
+            <div class="widget">
+                <h3>Мобильная совместимость</h3>
+                <p>Мы работаем над тем, чтобы портировать ZenithOS на мобильные устройства.</p>
             </div>
-            <div class="feature">
-                 <div class="stars">
-                     <div class="star star-1"></div>
-                     <div class="star star-2"></div>
-                 </div>
-                <h2>.zapp</h2>
-                <p>Use applications in the unique .zapp format, designed specifically for ZenithOS, for maximum performance and security.</p>
+            <div class="widget">
+                <h3>Темная тема</h3>
+                <p>ZenithOS включает в себя стильную темную тему для удобства работы и меньшего напряжения на глаза.</p>
             </div>
-            <div class="feature">
-                 <div class="stars">
-                     <div class="star star-1"></div>
-                     <div class="star star-2"></div>
-                 </div>
-                <h2>Performance</h2>
-                <p>ZenithOS is optimized for maximum performance on mobile devices, ensuring a smooth and responsive experience.</p>
-            </div>
-        </div>
-        <div class="installation-info">
-             <div class="stars">
-                 <div class="star star-1"></div>
-                 <div class="star star-2"></div>
-             </div>
-            <h2>Installation Instructions</h2>
-            <p>Firmware for ZenithOS can be found on our reserve Telegram channel: <a href="https://t.me/zenithos_os">@zenithos_os</a>. Please be aware that the firmware is currently under development and may not be fully stable.</p>
         </div>
 
-<a class="telegram-link" href="https://t.me/ZenithOS">Official Telegram Channel</a>
+        <a href="https://t.me/ZenithOS" class="btn" id="download-btn">Скачать ZenithOS</a>
     </div>
+
+    <script>
+
+        const userLang = navigator.language || navigator.userLanguage;
+
+        const translations = {
+            ru: {
+                title: "Добро пожаловать в ZenithOS",
+                description: "Наша цель — создать легковесную операционную систему, которая будет работать на старых устройствах с малым объемом ОЗУ.",
+                downloadBtn: "Скачать ZenithOS",
+                widgets: {
+                    lightweight: {
+                        title: "Легковесность и скорость",
+                        description: "ZenithOS разработан для работы даже на старом оборудовании с минимальным использованием памяти."
+                    },
+                    mobile: {
+                        title: "Мобильная совместимость",
+                        description: "Мы работаем над тем, чтобы портировать ZenithOS на мобильные устройства."
+                    },
+                    darkTheme: {
+                        title: "Темная тема",
+                        description: "ZenithOS включает в себя стильную темную тему для удобства работы и меньшего напряжения на глаза."
+                    }
+                }
+            },
+            en: {
+                title: "Welcome to ZenithOS",
+                description: "Our goal is to deliver a lightweight operating system that works on low RAM and old devices.",
+                downloadBtn: "Download ZenithOS",
+                widgets: {
+                    lightweight: {
+                        title: "Lightweight & Fast",
+                        description: "ZenithOS is designed to run smoothly even on old hardware with minimal memory usage."
+                    },
+                    mobile: {
+                        title: "Mobile-Friendly",
+                        description: "We are working on making ZenithOS portable to mobile devices as well."
+                    },
+                    darkTheme: {
+                        title: "Dark Theme",
+                        description: "ZenithOS features a clean dark theme for reduced eye strain and a modern look."
+                    }
+                }
+            }
+        };
+
+        function setLanguage(lang) {
+            const translation = translations[lang] || translations['en'];
+
+            // Заголовок и описание
+            document.getElementById("title").textContent = translation.title;
+            document.getElementById("description").textContent = translation.description;
+
+            // Кнопка
+            document.getElementById("download-btn").textContent = translation.downloadBtn;
+
+            // Виджеты
+            document.querySelectorAll('.widget').forEach((widget, index) => {
+                const widgetKey = Object.keys(translation.widgets)[index];
+                widget.querySelector('h3').textContent = translation.widgets[widgetKey].title;
+                widget.querySelector('p').textContent = translation.widgets[widgetKey].description;
+            });
+        }
+
+        if (userLang.startsWith('en')) {
+            setLanguage('en');
+        } else {
+            setLanguage('ru');
+        }
+    </script>
 </body>
 </html>
-
-
